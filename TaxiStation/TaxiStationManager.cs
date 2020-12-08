@@ -30,5 +30,9 @@ namespace TaxiStation
             return cars.Where(car => car.IsFree).ToList();
         }
 
+        public decimal TaxiStationCost() { return cars.Sum(car => car.CostOfCar); }
+        public List<PassengerCar> GetCarsOrderedByConsumption() { return cars.OrderBy(car => car.FuelConsumption).ToList(); }
+        public  List <PassengerCar> GetCarsBySpeed (int speed) { return cars.Where(car => car.MaxSpeed >= speed).ToList(); }
     }
+
 }

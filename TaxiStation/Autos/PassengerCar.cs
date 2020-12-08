@@ -1,5 +1,6 @@
 ﻿namespace TaxiStation.Autos
 {
+
     public abstract class PassengerCar
     {
         public int CountOfPassengers { get; protected set; }
@@ -10,6 +11,9 @@
         public string Number { get; }
         public int Year { get; }
         public bool IsFree { get; set; }
+        public decimal CostOfCar { get; protected set; }
+        public float FuelConsumption { get; protected set; }
+        public int MaxSpeed { get; protected set; }
 
         public PassengerCar(Driver driver, string color, string number, int year)
         {
@@ -23,5 +27,8 @@
         {
             return $"Автомобиль {Model}, цвет {Color}, номер {Number}. Водитель: {Driver.Name}.";
         }
+
+
+
     }
 }
